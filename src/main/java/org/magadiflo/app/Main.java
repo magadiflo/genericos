@@ -16,6 +16,15 @@ public class Main {
         String nombre = shoutConRetorno("Gaspar", 74);
         System.out.println("Nombre retornado: " + nombre);
 
+
+        /*
+        * Anteriormente esto funcionaba, pero como ahora el método printList tiene
+        * en la lista el comodín ? que extiende de Animal, solo aquellas listas
+        * cuyo dato herede de animal los aceptará, como es el caso del Cat, mientras que el
+        * Integer o String no. Esto significa que el comodín ha sido limitado a todas
+        * aquellos tipos que hereden de Animal.
+        */
+        /*
         List<Integer> intList = new ArrayList<>();
         intList.add(3);
         printList(intList);
@@ -23,6 +32,7 @@ public class Main {
         List<String> stringList = new ArrayList<>();
         stringList.add("Hello");
         printList(stringList);
+        */
 
         List<Cat> cats = new ArrayList<>();
         cats.add(new Cat());
@@ -35,7 +45,7 @@ public class Main {
      * Antes de tipo de dato de retorno, en el caso de este método es un void,
      * le colocamos el <T>, con eso le decimos a Java que este método es un genérico, y
      * que como parámetro le estamos pasando ese tipo T.
-     *
+     * <p>
      * <T, V>, java soporta múltiples tipos de genéricos, ya sea para métodos o clases.
      * Aquí le decimos que tendremos dos tipos de genéricos, uno del tipo T y otro
      * del tipo V
@@ -63,11 +73,16 @@ public class Main {
      * <?>, es decir puede ser cualquier tipo de objeto ejmp. Cliente, String, etc..
      * En el método se recibe una lista de <?>, es decir le decimos a java, que acepte tomar
      * una lista de CUALQUIER COSA, pero no sé lo que va en la lista.
-     *
+     * <p>
      * Recordar que es lo mismo que usamos en el ResponseEntity<?>, cuando trabajamos en
      * Spring Boot, para decirle que retornaremos cualquier tipo de Objeto: Un Map, un Cliente, etc.
+     * <p>
+     * <p>
+     * <? extends Animal>, con esto estamos limitando el comodín, diciendo que
+     * será cualquier tipo de objeto, pero que herede de Animal, similar a cómo lo
+     * hacíamos en nuestras clases genéricas.
      */
-    private static void printList(List<?> myList) {
+    private static void printList(List<? extends Animal> myList) {
         System.out.println();
     }
 }
