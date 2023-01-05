@@ -3,6 +3,9 @@ package org.magadiflo.app;
 import java.io.Serializable;
 
 /**
+ * Clase genérica
+ * ***************
+ *
  * T, representa el tipo de dato, podría haber usado cualquier otra letra o palabra, pero
  * por convención se suele usar esa letra para representar el tipo de dato.
  *

@@ -17,4 +17,8 @@ public class Cat extends Animal implements Serializable {
         return this.litterPreference;
     }
 
+    @Override
+    public String toString() {
+        return "meow";
+    }
 }
