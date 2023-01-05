@@ -1,6 +1,8 @@
 package org.magadiflo.app;
 
-public class Cat extends Animal {
+import java.io.Serializable;
+
+public class Cat extends Animal implements Serializable {
 
     private String litterPreference;
 
